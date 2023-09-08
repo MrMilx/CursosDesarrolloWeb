@@ -61,9 +61,9 @@ y este es otro texto
 
 | Nombre | Edad | Correo                   |
 | ------ | ---- | ------------------------ |
-| Camilo | 21   | milo.avc@gmail.com       |
-| Milo   | 21   | mistermilo2016@gmail.com |
-| Sofia  | 21   | sofia25@gmail.com        |
+| Camilo | 21   | <milo.avc@gmail.com>       |
+| Milo   | 21   | <mistermilo2016@gmail.com> |
+| Sofia  | 21   | <sofia25@gmail.com>        |
 
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam sint quaerat architecto iste commodi beatae enim repellendus tenetur, rerum, `let` animi repellat at placeat pariatur odio. Unde autem blanditiis alias hic.
 
@@ -76,7 +76,7 @@ return a + b;
 <form>
   <label for="q">Buscar:</label>
   <input typer="search" name="q" id="q">
-</form> 
+</form>
 
 <!-- Esto es un comentario en Marckdown --->
 
