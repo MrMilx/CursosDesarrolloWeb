@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cortocircuito</title>
+  </head>
+  <body>
+    <script>
+      //Cortocircuito OR - cuando el valor de la izquiera en la expresion siempre pueda validar true, es el valor que se cargara por defecto
+      function saludar(nombre) {
+        nombre = nombre || "Desconocido";
+        console.log(`Hola ${nombre}`);
+      }
+
+      saludar("Milo");
+      saludar();
+
+      console.log("Cadena" || "Valor de la derecha");
+      console.log(21 || "Valor de la derecha");
+      console.log(false || "Valor de la derecha");
+      console.log(null || "Valor de la derecha");
+
+      //Cortocircuito AND - Cuando el calor de la izquierda en la expresión siempre pueda validar false, es el valor que se cargara por defecto
+
+      function saludar(nombre) {
+        nombre = nombre && "Desconocido";
+        console.log(`Hola ${nombre}`);
+      }
+
+      saludar("Milo");
+      saludar();
+
+      console.log("Cadena" && "Valor de la derecha");
+      console.log(21 && "Valor de la derecha");
+      console.log(false && "Valor de la derecha");
+      console.log(null && "Valor de la derecha");
+    </script>
+  </body>
+</html>

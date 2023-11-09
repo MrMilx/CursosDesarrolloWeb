@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación Orientada A Objetos</title>
+</head>
+<body>
+  <script>
+    /*
+    clases - Modelo a seguir.
+    Objetos - Es una instancia de una clase
+    Atributos - Es una caracteristica o propedad del objeto (son variables dentro de un objeto)
+    Métodos - son las acciones que un objeto puede realizar
+    */
+
+    /* const animal = {
+      nombre : "Snoopy",
+      sonar(){
+        console.log("Hago sonidos porque estoy vivo")
+      }
+    }
+
+    const animal2 = {
+      nombre: "Lola Bonny",
+      sonar(){
+        console.log("Hago sonidos porque estoy vivo")
+      }
+    }
+
+    console.log(animal,animal2) */
+
+    //funcion constructora
+
+    function Animal(nombre,genero){
+      //Atributos
+      this.nombre = nombre
+      this.genero = genero
+
+      //Metodos
+      this.sonar = function(){
+        console.log("Hago sonidos porque estoy vivo")
+      }
+    }
+
+    const snoopy = new Animal("Snoopy","Macho"), lolaBunny = new Animal("Lola Bunny","Hembra")
+    
+    console.log(snoopy)
+    console.log(lolaBunny)
+    
+  </script>
+</body>
+</html>

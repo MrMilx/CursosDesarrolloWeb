@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <script>
+      const saludar = () => {
+        console.log("Hola");
+      };
+
+      /* const sumar = function(a,b){
+        return a,b
+      } */
+
+      const funcionDeVAriasLineas = () => {
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+      };
+
+      const sumar = (a, b) => a + b;
+      funcionDeVAriasLineas();
+      console.log(sumar(2, 3));
+      saludar();
+
+      const numeros = [1,2,3,4,5]
+
+      numeros.forEach((el,index)=>{
+        console.log(`El elemento ${el} esta en la posicion ${index}`)
+      })
+
+      /* function Perro(){
+        console.log(this)
+      }
+
+      Perro() */
+
+      const perro = {
+        nombre : "Milu",
+        ladrar () {
+          console.log(this)
+        }
+      }
+
+
+      perro.ladrar()
+    </script>
+  </body>
+</html>

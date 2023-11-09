@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basicos para java script</title>
+  </head>
+  <body>
+    <script>
+      // Basico JavaScript
+
+      let nombre = "Camilo";
+      let apellido = "Vargas";
+      let saludo = new String("Hola mundo");
+      let lorem =
+        "              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam a tenetur harum magni necessitatibus in perferendis ab, voluptatibus possimus vitae cumque earum accusamus asperiores quae omnis unde repudiandae ex consectetur.           ";
+      console.log(nombre, apellido, saludo);
+      console.log(
+        nombre.length,
+        apellido.length,
+        saludo.length,
+        nombre.toUpperCase(), //funcion que transforma el texto de un string en mayuscula
+        lorem.includes("amet"),
+        lorem, //funcion que busca una palabra dentro de un string
+        lorem.trim(), //esta funcion me quita los espacios innecesarios en un string
+        lorem.split(" "), //me genera un arreglo de mi string con un separador
+        lorem.split(",") //Esta vez el string será separado por una coma
+      );
+      //Concatenacion
+      saludo = "Hola mi nombre es " + nombre + " " + apellido + ".";
+      console.log(saludo);
+      let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`; //concatenacion por template strings
+      console.log(saludo2);
+
+      let ul = `
+      <ul>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>invierno</li>
+      </uk>
+      `;
+      console.log(ul);
+
+      // Repaso con variales numericas
+
+      let a = 2;
+      let b = new Number(1);
+      let c = 7.19;
+      let d = "5.6";
+      console.log(a, b);
+      console.log(c.toFixed(1)); //Cantidad de decimales permitidos
+      console.log(c.toFixed(5));
+      console.log(parseInt(c)); //solo me devuelve la parte entera
+      console.log(typeof c, typeof d);
+      console.log(a + b);
+      console.log(c + d);
+      console.log(c + parseInt(d));
+      console.log(c + parseFloat(d));
+
+      //Booleanos
+
+      let verdadero = true;
+      let falso = false;
+      let v = Boolean(true); //constructor
+      let f = Boolean(false); //constructor
+      console.log(verdadero, falso);
+      console.log(typeof verdadero, typeof falso);
+      console.log(Boolean(0));
+      console.log(Boolean(-7));
+      console.log(Boolean(""));
+      console.log(Boolean(" "));
+
+      //Tipos primitivos (undefined, null y NaN)
+      let indefinida;
+      console.log(indefinida);
+      // Undefined indica que no se ha inicializado una variable y que el valor esta ausente
+      let nulo = null;
+      console.log(null);
+      // null es un valor especial que indica la ausencia de un valor
+
+      let noEsUnNumero = "Hola" * 3.7;
+      console.log(noEsUnNumero);
+
+      /*
+      Una función es un bloque de código, autocontenido, que se puede definir una vez y ejecutar en cualquier momento.
+      Opcionalmente, una función puede aceptar parámetros y devolver un valor.
+
+      Se dice que las funciones son ciudadanos de primera clase porque pueden asignarse a un valor y pueden pasarse como un valor de retorno.
+      */
+
+      function estoEsUnaFuncion() {
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+      }
+
+      estoEsUnaFuncion();
+
+      let valorDeFuncion = unaFuncionQueDevuelveValor();
+      function unaFuncionQueDevuelveValor() {
+        return "La funcion ha retornado una cadena de texto";
+      }
+
+      console.log(valorDeFuncion);
+
+      function saludar(nombre = "desconocido", edad = 0) {
+        console.log(`Hola mi nombre es ${nombre} y tengo ${edad}`);
+      }
+
+      saludar("Diomedes", 4);
+      saludar();
+
+      //Funciones declaradas vs funciones expresadas
+      functionDeclarada();
+      function functionDeclarada() {
+        console.log(
+          "Esto es una función declarada, puede invocarse en cualquier parte de nuestro código, incluso antes de que la funcion sea declarada"
+        );
+      }
+
+      functionDeclarada();
+
+      //función anónima
+      //functionExpresada();
+      const functionExpresadas = function () {
+        console.log(
+          "Esto es una función expresada es decir, una función que se le ha asignado como valor a una variable, si invocamos esta función antes de su definición JS nos dirá..."
+        );
+      };
+
+      //arreglos
+      const A = [];
+      const B = [1, true, "Hola", ["A", "B", "C"]];
+      console.log(A);
+      console.log(B);
+      console.log(B.length);
+      console.log(B[2]);
+      console.log(B[0]);
+      console.log(B[3]);
+      console.log(B[3][2]);
+      console.log(B[3][1]);
+
+      const C = Array.of("X", "y", "Z", 9, 8, 7);
+      console.log(C);
+
+      const D = Array(100).fill(false); //se crea un arreglo de 100 posiciones y todas se rellenan con false
+      console.log(D);
+
+      const colores = ["Rojo", "Verde", "Azul"];
+      console.log(colores);
+
+      colores.push("Negro"); //agrega un elemento al final
+      console.log(colores);
+
+      colores.pop(); // elimina el ultimo elemento de un arreglo
+
+      colores.forEach(function (el, index) {
+        console.log(`<li id="${index}>${el}</li>`);
+      });
+
+      // Dentro de un objeto a las variables se le van a llamar atributos/propiedades y a las funciones se les llama metodos
+
+      const milo = {
+        nombre: "Milo",
+        apellido: "Vargas",
+        edad: 21,
+        pasatiempos: ["jugar", "hacer ejercicio", "programar"],
+        soltero: false,
+        contacto: {
+          email: "milo.avc@gmail.com",
+          movil: "573195461038",
+        },
+        saludar: function () {
+          console.log("Hola :)");
+        },
+        decirMiNombre: function () {
+          console.log(
+            `Hola me llamo ${this.nombre} ${this.apellido} y mi edad es ${this.edad}`
+          );
+        },
+      };
+
+      console.log(milo);
+      console.log(milo["nombre"]);
+      console.log(milo.edad);
+      console.log(milo.saludar());
+      console.log(milo.pasatiempos);
+      console.log(milo.pasatiempos[1]);
+      console.log(milo.contacto.movil);
+      console.log(milo.decirMiNombre());
+
+      console.log(Object.keys(milo));
+      console.log(Object.values(milo));
+      console.log(milo.hasOwnProperty("nombre")); //como saber si tiene la propiedad mencionada dentro del abjeto
+    </script>
+  </body>
+</html>
